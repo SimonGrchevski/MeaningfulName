@@ -1,1 +1,10 @@
-<h2>Users INDEX</h2>
+<div class="bg-danger">
+  <%@users.each do |user| %>
+    <h2><%=user.name%></h2>
+    <%user.posts.each do |post| %>
+   
+      <p><%= post.text%></p>
+      
+    <%end%>
+  <%end%>
+</div>
