@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @user = User.last_posts(current_user.name)
   end
 
   def show; end

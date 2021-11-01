@@ -1,10 +1,5 @@
 <div class="bg-danger">
-  <%@users.each do |user| %>
-    <h2><%=user.name%></h2>
-    <%user.posts.each do |post| %>
-   
-      <p><%= post.text%></p>
-      
-    <%end%>
+  <%@user.each do |post| %>
+      <h2><%=post.text%></h2>   
   <%end%>
 </div>
