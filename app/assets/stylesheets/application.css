@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.profileContainer {
+  height: 10em;
+  margin: 2em 0 !important;
+}

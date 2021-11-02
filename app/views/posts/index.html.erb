@@ -1,5 +1,7 @@
-<div class="bg-danger">
+<br>
+<br>
+<div class="bg-danger mx-5">
   <%@posts.each do |p| %>
-    <%= p.text %>
+    <%= p.comments.count %>
   <%end %>
 </div>

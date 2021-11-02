@@ -1,5 +1,13 @@
-<div class="bg-danger">
-  <%@user.each do |post| %>
-      <h2><%=post.text%></h2>   
-  <%end%>
+<div class=" w-100 py-5">
+  <%@user.each do |user| %>
+  <section class="d-flex justify-content-between profileContainer">
+    <article class="border">
+      <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'>
+    </article>
+    <%= link_to user, class:"w-75 d-flex justify-content-around border p-2 rounded-top" do %>
+      <div class="align-self-center"><h1><%= user.name %></h1></div>
+      <div class="align-self-end"><p>Number of posts <%= user.posts.count %></p></div>
+    <%end%>
+  </section>
+    <%end%>
 </div>

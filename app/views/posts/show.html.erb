@@ -1,1 +1,10 @@
-<p> POSTS SHOW </p>
+<br>
+<br>
+<p> <%= @post.text %></p>
+
+<div>
+  <% @post.comments.each do |comment| %>
+    <%= comment.user.name %>
+    <%= comment.text %>
+  <% end %>
+</div>
