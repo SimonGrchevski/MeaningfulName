@@ -5,7 +5,6 @@ class Post < ApplicationRecord
 
   after_save :update_post_counter
 
-  private
   def self.update_post_counter(param)
     @user = User.find_by_name(param[:user])
     @user.update(postcounter: param[:update_to])
