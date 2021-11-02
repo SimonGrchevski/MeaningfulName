@@ -1,1 +1,5 @@
-<h1>POSTS INDEX</h1>
+<div class="bg-danger">
+  <%@posts.each do |p| %>
+    <%= p.text %>
+  <%end %>
+</div>

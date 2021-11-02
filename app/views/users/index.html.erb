@@ -1,1 +1,5 @@
-<h2>Users INDEX</h2>
+<div class="bg-danger">
+  <%@user.each do |post| %>
+      <h2><%=post.text%></h2>   
+  <%end%>
+</div>
