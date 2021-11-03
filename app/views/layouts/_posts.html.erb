@@ -1,0 +1,10 @@
+<% @user.posts.each do |p| %>
+  <article class="w-100 bord p-2 rounded-top my-4 shadow">
+    <h5 class="p-1">Post # <%=p.id %></h5> 
+      <p class="p-1"><%= p.text %></p>
+    <div class="d-flex justify-content-end">
+      <p class="p-1">Comments: <%=p.comments.count%></p>
+      <p class="p-1">Likes: <%=p.likes.count%></p>
+    </div>
+  </article>
+<%end %>

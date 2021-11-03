@@ -1,27 +1,9 @@
-<section class="d-flex justify-content-between profileContainer">
-    <article class="bord shadow">
-      <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'>
-    </article>
-    <article class="w-75 d-flex justify-content-around bord p-2 rounded-top shadow">
-      <div class="align-self-center"><h1><%= @user.name %></h1></div>
-      <div class="align-self-end"><p>Number of posts <%= @user.posts.count %></p></div>
-    </article>
-</section>
+<%= render 'layouts/profile', locals:{user:@user} %>
 <article class="w-100 bord p-2 rounded-top shadow">
   <h5 class="p-1">Bio</h5>
   <p class="p-1"><%= @user.bio %></p>
 </article>
-
-<% @user.posts.each do |p| %>
-  <article class="w-100 bord p-2 rounded-top my-4 shadow">
-    <h5 class="p-1">Post # <%=p.id %></h5> 
-      <p class="p-1"><%= p.text %></p>
-    <div class="d-flex justify-content-end">
-      <p class="p-1">Comments: <%=p.comments.count%></p>
-      <p class="p-1">Likes: <%=p.likes.count%></p>
-    </div>
-</article>
-<%end %>
+<%= render 'layouts/posts', locals:{user: @user}%>
 <div class="d-flex justify-content-center">
 <%= link_to 'Show all posts',"/users/#{@user.id}/posts/", class:"btn button p-3 m-3" %>
 </div> 

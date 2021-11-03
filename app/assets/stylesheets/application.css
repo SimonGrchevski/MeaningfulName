@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
 *,
 *::after,
 *::before {
@@ -34,8 +36,12 @@ a:hover {
 }
 
 .button {
-  background-color: #ff674d;
-  color: #29047e;
+  background-color: #1d025e;
+  color: #9191e9;
+}
+
+.button:hover {
+  color: #ff674d;
 }
 
 img {
@@ -47,6 +53,7 @@ body {
   background-color: #3a0ca3;
   color: #9191e9;
   word-spacing: -1px;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .bord {

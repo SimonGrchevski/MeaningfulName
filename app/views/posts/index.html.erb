@@ -1,12 +1,4 @@
-<section class="d-flex justify-content-between profileContainer">
-    <article class="shadow">
-      <%= image_tag "profile.png" %>
-    </article>
-    <article class="w-75 d-flex justify-content-around bord p-2 rounded-top shadow">
-      <div class="align-self-center"><h1><%= @user.name %></h1></div>
-      <div class="align-self-end"><p>Number of posts <%= @user.posts.count %></p></div>
-    </article>
-</section>
+<%= render 'layouts/profile', locals:{user: @user} %>
 <% @posts.each do |p| %>
   <%= link_to "/users/#{@user.id}/posts/#{p.id}" do %>
     <article class="w-100 bord p-2 rounded-top mb-4 shadow">
