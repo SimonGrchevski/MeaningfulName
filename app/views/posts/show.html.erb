@@ -1,4 +1,4 @@
-<article class="w-100 bord p-2 rounded-top mb-4 my-5">
+<article class="w-100 bord p-2 rounded-top mb-4 my-5 shadow">
   <section class="d-flex justify-content-between postsBy">
     <div>
       <h5>Post # <%=@post.id %> by <%= @post.user.name %></h5>
@@ -11,7 +11,7 @@
     <p><%= @post.text%></p>
   </section>
 
-  <section class="bord p-2">
+  <section class="bord p-2 shadow">
   <% @post.comments.each do |comment| %>
     <p><%= comment.user.name %> : <%= comment.text %> 
   <% end %>

@@ -29,6 +29,15 @@ li {
   color: inherit;
 }
 
+a:hover {
+  color: #ff674d;
+}
+
+.button {
+  background-color: #ff674d;
+  color: #29047e;
+}
+
 img {
   width: 100%;
   height: 100%;
