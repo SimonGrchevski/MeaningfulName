@@ -26,6 +26,7 @@ a,
 li {
   text-decoration: none;
   list-style-type: none;
+  color: inherit;
 }
 
 img {
@@ -33,7 +34,29 @@ img {
   height: 100%;
 }
 
+body {
+  background-color: #3a0ca3;
+  color: #9191e9;
+  word-spacing: -1px;
+}
+
+.bord {
+  border: 1px solid #160147;
+}
+
+.shadow {
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .profileContainer {
   height: 10em;
   margin: 2em 0 !important;
+}
+
+.postsBy {
+  height: 3em;
+}
+
+.postsText {
+  min-height: 5em;
 }
