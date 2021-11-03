@@ -1,18 +1,16 @@
 <%= render 'layouts/profile', locals:{user: @user} %>
 <% @posts.each do |p| %>
   <%= link_to "/users/#{@user.id}/posts/#{p.id}" do %>
-    <article class="w-100 bord p-2 rounded-top mb-4 shadow">
-      <h5 class="p-1">Post # <%=p.id %></h5> 
-        <p class="p-1"><%= p.text %></p>
-      <div class="d-flex justify-content-end">
-        <p class="p-1">Comments: <%=p.comments.count%></p>
-        <p class="p-1">Likes: <%=p.likes.count%></p>
-      </div>
+    <article class="w-100 p-2 rounded-top mb-5 shadow">
+      <%= render 'layouts/posts', :post =>p %>
   <%end %>
-      <article class="w-100 bord p-2 rounded-top shadow">
-      <%p.comments.each do |c| %>
-        <p><%=c.user.name %>: <%= c.text%></p>
-        
+     <% if p.comments.count > 0 %>
+        <p class="p-1">Comments:</p>
+        <article class="w-100 bord p-2 rounded-top shadow">
+        <%p.comments.each do |c| %>
+          <p><%=c.user.name %>: <%= c.text%></p>
+          
+        <%end%>
       <%end%>
       </article>
     </article>
