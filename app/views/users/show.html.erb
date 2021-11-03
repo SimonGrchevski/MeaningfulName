@@ -17,12 +17,12 @@
 <h3> <%= @user.name %></h3>
 <% @user.posts.each do |p| %>
   <article class="w-100 border p-2 rounded-top">
-  <h5 class="p-1">Post # <%=p.id %></h5> 
-  <p class="p-1"><%= p.text %></p>
-  <div class="d-flex justify-content-end">
-    <p class="p-1">Comments: <%=p.comments.count%></p>
-    <p class="p-1">Likes: <%=p.likes.count%></p>
-  </div>
+    <h5 class="p-1">Post # <%=p.id %></h5> 
+      <p class="p-1"><%= p.text %></p>
+    <div class="d-flex justify-content-end">
+      <p class="p-1">Comments: <%=p.comments.count%></p>
+      <p class="p-1">Likes: <%=p.likes.count%></p>
+    </div>
 </article>
   <%= link_to p.text, "/users/#{@user.id}/posts/#{p.id}" %> 
 <%end %>
