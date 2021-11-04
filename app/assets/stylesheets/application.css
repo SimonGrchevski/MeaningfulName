@@ -36,6 +36,10 @@ li {
   border: none;
 }
 
+.txt-right {
+  text-align: right;
+}
+
 a:hover {
   color: #ff674d;
 }
@@ -93,3 +97,7 @@ body {
   background-color: #09011b;
 }
 
+.likeBtn {
+  color: #fff;
+  border-radius: 20%;
+}
