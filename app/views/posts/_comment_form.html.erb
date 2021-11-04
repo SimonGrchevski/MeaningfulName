@@ -1,0 +1,6 @@
+<%= form_with(model: comment ) do |form|%>
+  <%= form.text_area :text , placeholder: 'Your post here'%>
+  <%= form.submit 'Submit' %>
+  <%= form.hidden_field :user_id, value:params[:user_id]%>
+  <%= form.hidden_field :post_id, value:post%>
+<%end%>

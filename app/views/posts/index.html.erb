@@ -1,4 +1,5 @@
-<%= render 'layouts/profile', locals:{user: @user} %>
+<%= render 'layouts/profile'%>
+<%= render 'posts/post_form', :post => @post %>
 <% @posts.each do |p| %>
   <%= link_to "/users/#{@user.id}/posts/#{p.id}" do %>
     <article class="w-100 p-2 rounded-top mb-5 shadow">
@@ -9,7 +10,6 @@
         <article class="w-100 bord p-2 rounded-top shadow">
         <%p.comments.each do |c| %>
           <p><%=c.user.name %>: <%= c.text%></p>
-          
         <%end%>
       <%end%>
       </article>

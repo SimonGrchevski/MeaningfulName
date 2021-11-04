@@ -12,9 +12,13 @@
   </section>
 
   <section class="bord p-2 shadow">
+  <%= render 'posts/like_form', :like => @like, :post => @post.id %>
+  <%= render 'posts/comment_form', :comment => @comment, :post => @post.id%>
   <% @post.comments.each do |comment| %>
     <p><%= comment.user.name %> : <%= comment.text %> 
   <% end %>
+
   </section>
+
   
 </article>
