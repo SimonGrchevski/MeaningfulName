@@ -76,6 +76,7 @@ body {
 .profileContainer {
   height: 10em;
   margin: 2em 0 !important;
+  position: relative;
 }
 
 .postsBy {
