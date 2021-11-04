@@ -1,0 +1,4 @@
+<%= form_with(model: post , html:{class: "w-100 p-2 rounded-top mb-5 shadow"}) do |form| %>
+  <%= form.text_area :text , placeholder: 'Your post here', class: "w-100 p-2 rounded-top shadow postForm outline-border-none"%>
+  <%= form.submit 'Submit', class:"button outline-border-none p-2" %>
+<%end%>

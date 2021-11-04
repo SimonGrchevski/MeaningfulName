@@ -7,14 +7,20 @@
       <p>Comments: <%=@post.comments.count%> Likes: <%=@post.likes.count%></p>
     </div>
   </section>
-  <section class="postsText my-3">
+  <section class="postsText mt-2">
     <p><%= @post.text%></p>
   </section>
-
+  <section class="mb-3 text-right">
+    <%= render 'posts/like_form', :like => @like, :post => @post.id %>
+  </section>
   <section class="bord p-2 shadow">
+  <%= render 'comments/comment_form', :comment => @comment%>
+
   <% @comments.each do |comment| %>
     <p><%= comment.user.name %> : <%= comment.text %> 
   <% end %>
+
   </section>
+
   
 </article>

@@ -1,0 +1,5 @@
+<%= form_with(model:like, html:{class:"txt-right"}) do |form|%>
+  <%= form.submit 'Like', class:"button outline-border-none p-2 likeBtn shadow"%>
+  <%= form.hidden_field :user_id, value:params[:user_id]%>
+  <%= form.hidden_field :post_id, value:post%>
+<%end%>

@@ -31,6 +31,15 @@ li {
   color: inherit;
 }
 
+.outline-border-none {
+  outline: none;
+  border: none;
+}
+
+.txt-right {
+  text-align: right;
+}
+
 a:hover {
   color: #ff674d;
 }
@@ -67,6 +76,7 @@ body {
 .profileContainer {
   height: 10em;
   margin: 2em 0 !important;
+  position: relative;
 }
 
 .postsBy {
@@ -75,4 +85,20 @@ body {
 
 .postsText {
   min-height: 5em;
+}
+
+.postForm {
+  background-color: #19034e;
+  color: #9191e9;
+  min-height: 5em;
+  max-height: 5em;
+}
+
+.postForm:focus {
+  background-color: #09011b;
+}
+
+.likeBtn {
+  color: #fff;
+  border-radius: 20%;
 }

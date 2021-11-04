@@ -1,0 +1,6 @@
+<%= form_with(model: comment) do |form|%>
+  <%= form.text_area :text , placeholder: 'Your comment here', class: "w-100 p-2 rounded-top shadow postForm outline-border-none"%>
+  <%= form.submit 'Submit', class:"button outline-border-none p-2" %>
+  <%= form.hidden_field :user_id, value:params[:user_id]%>
+  <%= form.hidden_field :post_id, value:params[:id]%>
+<%end%>

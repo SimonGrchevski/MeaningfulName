@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   get 'comments/index'
   get 'show', to: 'users#show'
   get 'likes/index'
+  resources :posts
+  resources :comments
+  post 'posts/:id/', to: 'posts#like', as: 'like'
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show] 
+    resources :posts, only: [:index, :show] do
+    end
   end
+  resources :likes
 end
