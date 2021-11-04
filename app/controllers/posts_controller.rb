@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   def index
-    Post.update_post_counter(user: current_user.name, update_to: current_user.posts.count)
-    @posts = Post.last_comments(1)
+    @user = User.find_by_id(params[:user_id])
+    @posts = @user.posts
   end
 
-  def show; end
+  def show
+    @post = Post.find_by_id(params[:id])
+    @comments = Post.last_comments(params[:id])
+  end
 end

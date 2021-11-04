@@ -1,0 +1,8 @@
+<article class="w-100 bord p-2 rounded-top my-1 shadow">
+  <h5 class="p-1">Post # <%=post.id %></h5> 
+    <p class="p-1"><%= post.text %></p>
+  <div class="d-flex justify-content-end">
+    <p class="p-1">Comments: <%=post.comments.count%></p>
+    <p class="p-1">Likes: <%=post.likes.count%></p>
+  </div>
+</article>

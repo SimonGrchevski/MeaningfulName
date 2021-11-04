@@ -1,0 +1,9 @@
+<section class="d-flex justify-content-between profileContainer">
+    <article>
+      <%= image_tag "profile.png" %>
+    </article>
+    <article class="w-75 d-flex justify-content-around bord p-2 rounded-top shadow">
+      <div class="align-self-center"><h1><%= @user.name %></h1></div>
+      <div class="align-self-end"><p>Number of posts <%= @user.posts.count %></p></div>
+    </article>
+</section>
