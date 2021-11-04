@@ -6,5 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
+    @comments = Post.last_comments(params[:id])
   end
 end
