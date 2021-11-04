@@ -5,13 +5,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    if @comment.save 
-      redirect_to request.referrer
-    end
+    redirect_to request.referrer if @comment.save
   end
 
   private
+
   def comment_params
-    params.require(:comment).permit(:text,:user_id, :post_id)
+    params.require(:comment).permit(:text, :user_id, :post_id)
   end
 end
