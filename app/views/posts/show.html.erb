@@ -13,7 +13,7 @@
   <section class="mb-3 text-right">
     <%= render 'posts/like_form', :like => @like, :post => @post.id %>
   </section>
-  <section class="bord p-2 shadow">
+  <section class="p-2 shadow">
   <%= render 'comments/comment_form', :comment => @comment%>
 
   <% @comments.each do |comment| %>

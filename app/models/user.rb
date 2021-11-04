@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :name, presence: true
+  validates :postcounter ,numericality: { only_integer: true, greater_than: 0 }
   has_many :posts
   has_many :likes
   has_many :comments

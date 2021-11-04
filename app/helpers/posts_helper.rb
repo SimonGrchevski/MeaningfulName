@@ -1,5 +1,5 @@
 module PostsHelper
   def render_comments(comments)
-    comments.limit(5).order('id desc')
+    comments.order('id desc').limit(5)
   end
 end
