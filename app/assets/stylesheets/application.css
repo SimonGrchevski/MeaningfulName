@@ -31,6 +31,11 @@ li {
   color: inherit;
 }
 
+.outline-border-none {
+  outline: none;
+  border: none;
+}
+
 a:hover {
   color: #ff674d;
 }
@@ -76,3 +81,15 @@ body {
 .postsText {
   min-height: 5em;
 }
+
+.postForm {
+  background-color: #19034e;
+  color: #9191e9;
+  min-height: 5em;
+  max-height: 5em;
+}
+
+.postForm:focus {
+  background-color: #09011b;
+}
+
