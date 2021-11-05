@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  validates :text, presence: true, length:{ maximum: 250}
-  validates :commentsCounter, :likesCounter ,numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :text, presence: true, length: { maximum: 250 }
+  validates :commentsCounter, :likesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   belongs_to :user
   has_many :comments
   has_many :likes
@@ -13,5 +13,4 @@ class Post < ApplicationRecord
   def self.last_comments(post_id)
     Post.find_by_id(post_id).comments.limit(5).order(created_at: :desc)
   end
-
 end

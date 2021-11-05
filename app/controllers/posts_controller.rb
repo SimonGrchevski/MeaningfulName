@@ -15,12 +15,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to request.referrer 
-      flash[:notice] = "Post successfully created"
-    else 
-      redirect_to request.referrer 
-      flash[:alert] = "Creation failed" 
+      flash[:notice] = 'Post successfully created'
+    else
+      flash[:alert] = 'Creation failed'
     end
+    redirect_to request.referrer
   end
 
   private

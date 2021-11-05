@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  subject { User.create(name: 'Simon', postcounter: 0) }
 
-  subject { User.create(name:'Simon', postcounter:0) }
-  
   describe 'Validations' do
-
     it 'returns true if user was created correctly' do
       expect(subject).to be_truthy
     end
@@ -31,7 +29,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'name should be maximum 25 characters' do
-      subject.name = 'a'*26
+      subject.name = 'a' * 26
       expect(subject).to_not be_valid
     end
 
@@ -45,4 +43,4 @@ RSpec.describe User, type: :model do
     it { should have_many(:posts) }
     it { should have_many(:comments) }
   end
-end 
+end
