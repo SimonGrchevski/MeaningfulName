@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length:{ minimum: 5, maximum:25}
   validates :postcounter ,numericality: { only_integer: true, greater_than: 0 }
   has_many :posts
   has_many :likes
