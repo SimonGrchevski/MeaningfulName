@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name:'Simon', postcounter:0) }
+
+  subject { User.create(name:'Simon', postcounter:0) }
   
   describe 'Validations' do
 
@@ -32,6 +33,10 @@ RSpec.describe User, type: :model do
     it 'name should be maximum 25 characters' do
       subject.name = 'a'*26
       expect(subject).to_not be_valid
+    end
+
+    it 'RRRR' do
+      expect(User.last_posts(subject.name).count).to be < 4
     end
   end
 

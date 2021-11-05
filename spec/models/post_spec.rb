@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(text:'My post', user_id:1) }
+  before :all do
+    @user= User.create(name:'Simon', postcounter:30 )
+  end
+  
+  subject { Post.create(text:'My post', user_id:1, commentsCounter:0, likesCounter:0) }
 
   describe 'Validations' do
 
@@ -35,34 +39,21 @@ RSpec.describe Post, type: :model do
     end
 
     it 'likes counter should be greater or equal to 0' do
-      subject.likesCounter = -3
+      subject.commentsCounter = -3
       expect(subject).to_not be_valid
     end
-
-    # it 'postcounter should be valid' do
-    #   subject.postcounter = nil
-    #   expect(subject).to_not be_valid
-    # end
-
-    # it 'postcounter should greater or eq to 0' do
-    #   subject.postcounter = -3
-    #   expect(subject).to_not be_valid
-    # end
-
-    # it 'name should be at least 5 characters' do
-    #   subject.name = 'abc'
-    #   expect(subject).to_not be_valid
-    # end
-
-    # it 'name should be maximum 25 characters' do
-    #   subject.name = 'a'*26
-    #   expect(subject).to_not be_valid
-    # end
   end
 
   describe 'associations' do
     it { should have_many(:likes) }
     it { should have_many(:comments) }
     it { should belong_to(:user) }
+  end
+
+  describe 'methods' do
+    it 'update_post_counter' do
+      @changed = Post.update_post_counter(user:'Simon', update_to:13)
+      expect(@changed).to be_truthy
+    end
   end
 end
