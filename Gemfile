@@ -17,7 +17,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bootstrap', '~> 5.1'
-gem 'bullet', '~> 6.1', '>= 6.1.5'
+
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-html-matchers'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
@@ -46,6 +47,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'bullet', '~> 6.1', '>= 6.1.5'
   gem 'spring'
 end
 

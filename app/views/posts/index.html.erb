@@ -8,7 +8,7 @@
      <% if p.comments.count > 0 %>
         <p class="p-1">Comments:</p>
         <article class="w-100 bord p-2 rounded-top shadow">
-        <%p.comments.each do |c| %>
+        <%render_comments(p.comments.includes([:user])).each do |c| %>
           <p><%=c.user.name %>: <%= c.text%></p>
         <%end%>
       <%end%>

@@ -7,19 +7,24 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
-    @comments = Post.last_comments(params[:id])
+    @comments = @post.comments.includes([:user])
     @comment = Comment.new
     @like = Like.new
   end
 
   def create
     @post = current_user.posts.build(post_params)
-    redirect_to request.referrer if @post.save
+    if @post.save
+      flash[:notice] = 'Post successfully created'
+    else
+      flash[:alert] = 'Creation failed'
+    end
+    redirect_to request.referrer
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:text)
+    params.require(:post).permit(:text, :commentsCounter, :likesCounter)
   end
 end
