@@ -12,12 +12,18 @@
   </head>
 
   <body class="container-md mx-auto">
+  
     <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
     <% end %> 
+    <%if current_user%>
+    <header>
+      <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
+    </header>
+  <% end %>
     <%= yield %>
   </body>
 </html>

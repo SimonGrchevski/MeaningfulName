@@ -3,11 +3,12 @@
   <h5 class="p-1">Bio</h5>
   <p class="p-1"><%= @user.bio %></p>
 </article>
+
 <% @posts.each do |post| %>
   <%= render 'layouts/posts', :post =>post %>
 <% end %>
 <div class="d-flex justify-content-center">
-<%= link_to 'Show all posts',"/users/#{@user.id}/posts/", class:"btn button p-3 m-3" %>
+<%= link_to 'Show all posts',posts_path, class:"btn button p-3 m-3" %>
 </div> 
 
 
