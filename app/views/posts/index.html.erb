@@ -1,7 +1,7 @@
 <%= render 'layouts/profile'%>
 <%= render 'post_form', :post => @post %>
 <% @posts.each do |p| %>
-  <%= link_to "/users/#{@user.id}/posts/#{p.id}" do %>
+  <%= link_to "/posts/#{p.id}" do %>
     <article class="w-100 p-2 rounded-top mb-5 shadow">
       <%= render 'layouts/posts', :post =>p %>
   <%end %>

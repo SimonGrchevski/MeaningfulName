@@ -1,0 +1,43 @@
+<h2 class="position-absolute">Edit Password</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+      <%= f.hidden_field :email, value: current_user.email%>
+   </div>
+
+  <section class="d-flex justify-content-center vh-100 align-items-center flex-column" >
+    <div class="p-5 deepPurple">
+      <div class="field w-100 rounded-top outline-border-none d-flex align-items-center flex-column p-3">
+        <div><%= f.label :current_password %></div>
+        <div><%= f.password_field :current_password, autocomplete: "current-password" %></div>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+      <% end %>
+
+      <div class="field w-100 rounded-top outline-border-none d-flex align-items-center flex-column p-3">
+        <div><%= f.label :password, value:"New Password"%></div>
+        <div><%= f.password_field :password, autocomplete: "new-password" %></div>
+        <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+
+      <div class="field w-100 rounded-top  outline-border-none d-flex align-items-center flex-column p-3">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions w-100 rounded-top outline-border-none d-flex align-items-center flex-column p-3">
+        <%= f.submit "Update", class:"btn button w-100"%>
+        <% end %>
+      </div>
+      
+      <div>
+        <%= link_to "Back", :back %>
+      </div>
+    </div>  
+  </section>
+  

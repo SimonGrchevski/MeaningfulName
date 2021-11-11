@@ -24,6 +24,14 @@
   margin: 0 !important;
 }
 
+.deepPurple {
+  background-color: #19034e;
+}
+
+.pink {
+  color: #ff674d;
+}
+
 a,
 li {
   text-decoration: none;

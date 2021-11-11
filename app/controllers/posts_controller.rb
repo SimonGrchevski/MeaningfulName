@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by_id(params[:user_id])
+    @user = current_user
     @posts = @user.posts.order('id desc')
     @post = Post.new
   end
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:text, :commentsCounter, :likesCounter)
+    params.require(:post).permit(:text, :commentscounter, :likescounter)
   end
 end
