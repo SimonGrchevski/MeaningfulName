@@ -8,6 +8,12 @@ class CommentsController < ApplicationController
     redirect_to request.referrer if @comment.save
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to request.referrer, notice: 'Your comment has been deleted'
+  end
+
   private
 
   def comment_params

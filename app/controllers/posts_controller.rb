@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = current_user
-    @posts = @user.posts.order('id desc')
+    @posts = Post.all.includes([:user])
     @post = Post.new
   end
 
@@ -20,6 +20,12 @@ class PostsController < ApplicationController
       flash[:alert] = 'Creation failed'
     end
     redirect_to request.referrer
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to request.referrer, notice: 'Your post has been deleted'
   end
 
   private

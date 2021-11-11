@@ -14,10 +14,11 @@
     <%= render 'posts/like_form', :like => @like, :post => @post.id %>
   </section>
   <section class="p-2 shadow">
+  
   <%= render 'comments/comment_form', :comment => @comment%>
-
   <% @comments.each do |comment| %>
-    <p><%= comment.user.name %> : <%= comment.text %> 
+    <p><%= comment.user.name %> : <%= comment.text %></p>
+    <%= link_to 'Delete Comment', "/comments/#{comment.id}",method: :delete %>
   <% end %>
 
   </section>
