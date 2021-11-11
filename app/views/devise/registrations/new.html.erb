@@ -10,7 +10,7 @@
 
    <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autocomplete: "new-password" %>
+    <%= f.text_field :name%>
   </div>
 
   <div class="field">
@@ -30,7 +30,8 @@
 
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up",
+    data: { confirm: "Please make sure you typed your correct email!" } %>
   </div>
 <% end %>
 

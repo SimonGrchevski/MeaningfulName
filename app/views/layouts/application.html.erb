@@ -14,16 +14,11 @@
   <body class="container-md mx-auto">
   
     <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <p class="alert deepPurple p-1 outline-border-none"><%= notice %></p>
     <% end %>
     <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <p class="alert pink deepPurple p-1 outline-border-none"><%= alert %></p>
     <% end %> 
-    <%if current_user%>
-    <header>
-      <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
-    </header>
-  <% end %>
-    <%= yield %>
+    <%= yield%>
   </body>
 </html>
