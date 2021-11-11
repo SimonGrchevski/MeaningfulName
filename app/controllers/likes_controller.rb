@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
-  def index
-  end
+  def index; end
 
   def new
     @like = Like.new(like_params)

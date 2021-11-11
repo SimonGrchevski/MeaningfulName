@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #redirect_to '/' if logged_in?
+  # redirect_to '/' if logged_in?
 
   def index
     @user = User.all
@@ -9,5 +9,4 @@ class UsersController < ApplicationController
     @user = current_user
     @posts = User.last_posts(current_user.name)
   end
-
 end
