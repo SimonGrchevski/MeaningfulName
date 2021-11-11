@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body class="container-md mx-auto">
-  
+    <%if current_user%>
+      <header>
+        <div><%= link_to 'Signout', destroy_user_session_path, method: :delete %></div>
+        <div><%= link_to 'Change password', edit_user_registration_url%></div>
+      </header>
+    <% end %>
     <% if notice %>
-    <p class="alert deepPurple p-1 outline-border-none"><%= notice %></p>
+      <p class="alert deepPurple p-1 outline-border-none"><%= notice %></p>
     <% end %>
     <% if alert %>
-    <p class="alert pink deepPurple p-1 outline-border-none"><%= alert %></p>
-    <% end %> 
+      <p class="alert pink deepPurple p-1 outline-border-none"><%= alert %></p>
+    <% end %>
     <%= yield%>
   </body>
 </html>
