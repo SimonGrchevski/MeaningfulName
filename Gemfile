@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec-html-matchers'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 5.0'
+  gem "database_cleaner"
 end
 
 group :development do
