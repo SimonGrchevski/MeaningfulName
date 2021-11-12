@@ -1,8 +1,15 @@
 <article class="w-100 bord p-2 rounded-top my-1 shadow">
-  <h5 class="p-1">Post # <%=post.id %></h5> 
-    <p class="p-1"><%= post.text %></p>
-  <div class="d-flex justify-content-end">
-    <p class="p-1">Comments: <%=post.comments.count%></p>
-    <p class="p-1">Likes: <%=post.likes.count%></p>
+  <h5 class="p-1"><%=post.user.name%></h5>
+  <p class="p-1"><%= post.text %></p>
+  <div class="d-flex align-items-end flex-column ">
+    <div>
+      <% if can? :delete, post %>
+        <%= link_to 'Delete Post', "/posts/#{post.id}", method: :delete, class:"btn button p-1" %>
+      <% end %>
+    </div>
+    <section class="d-flex">
+      <div class="p-1"> Comments: <%=post.comments.count%></div>
+      <div class="p-1"> Likes: <%=post.likes.count%></div>
+    </section>
   </div>
 </article>

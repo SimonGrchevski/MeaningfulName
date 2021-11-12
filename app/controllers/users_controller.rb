@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  # redirect_to '/' if logged_in?
-
   def index
     @user = User.all
   end
