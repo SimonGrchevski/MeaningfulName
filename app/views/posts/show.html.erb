@@ -18,7 +18,9 @@
   <%= render 'comments/comment_form', :comment => @comment%>
   <% @comments.each do |comment| %>
     <p><%= comment.user.name %> : <%= comment.text %></p>
-    <%= link_to 'Delete Comment', "/comments/#{comment.id}",method: :delete %>
+    <%if can? :delete, comment %>
+      <%= link_to 'Delete Comment', "/comments/#{comment.id}",method: :delete %>
+    <% end %>
   <% end %>
 
   </section>
