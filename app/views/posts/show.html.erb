@@ -14,16 +14,16 @@
     <%= render 'posts/like_form', :like => @like, :post => @post.id %>
   </section>
   <section class="p-2 shadow">
-  
-  <%= render 'comments/comment_form', :comment => @comment%>
-  <% @comments.each do |comment| %>
-    <p><%= comment.user.name %> : <%= comment.text %></p>
-    <%if can? :delete, comment %>
-      <%= link_to 'Delete Comment', "/comments/#{comment.id}",method: :delete %>
+    <%= render 'comments/comment_form', :comment => @comment%>
+    <% @comments.each do |comment| %>
+      <div class="d-flex justify-content-between align-items-center">
+        <p><%= comment.user.name %> : <%= comment.text %></p>
+        <%if can? :delete, comment %>
+          <div>
+            <%= link_to 'Delete Comment', "/comments/#{comment.id}",method: :delete,class:"btn button p-1"%>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
-
   </section>
-
-  
 </article>
