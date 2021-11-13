@@ -4,9 +4,9 @@
     <article>
       <%= image_tag "profile.png" %>
     </article>
-    <%= link_to user, class:"w-75 d-flex justify-content-around bord p-2 rounded-top shadow" do %>
+    <%= link_to user,user_id:user.id, class:"w-75 d-flex justify-content-around bord p-2 rounded-top shadow" do %>
       <div class="align-self-center"><h1><%= user.name %></h1></div>
-      <div class="align-self-end"><p>Number of posts <%= user.posts.count %></p></div>
+      <div class="align-self-end"><p>Number of posts <%= user.postcounter %></p></div>
     <%end%>
   </section>
     <%end%>

@@ -1,7 +1,8 @@
-<%= render 'layouts/profile'%>
+<%= render 'layouts/profile', :user => @user%>
 <article class="w-100 bord p-2 rounded-top shadow">
   <h5 class="p-1">Bio</h5>
   <p class="p-1"><%= @user.bio %></p>
+  <p> Number of posts:<%= @user.postcounter %></P>
 </article>
 
 <% @posts.each do |post| %>
