@@ -3,13 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Post view', type: :feature do
   include Devise::Test::IntegrationHelpers
   describe 'Post index' do
-    let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools',postcounter:3) }
+    let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools', postcounter: 3) }
 
     describe 'display post information' do
       before do
-        Post.create(title: 'The great decieve', text: 'My first post', user_id: user.id,commentscounter:0, likescounter:0)
-        Post.create(title: 'Black magic', text: 'My second post', user_id: user.id,commentscounter:0, likescounter:0)
-        Post.create(title: 'Introduction to wild magic', text: 'My third post', user_id: user.id,commentscounter:0, likescounter:0)
+        Post.create(title: 'The great decieve', text: 'My first post', user_id: user.id, commentscounter: 0,
+                    likescounter: 0)
+        Post.create(title: 'Black magic', text: 'My second post', user_id: user.id, commentscounter: 0, likescounter: 0)
+        Post.create(title: 'Introduction to wild magic', text: 'My third post', user_id: user.id, commentscounter: 0,
+                    likescounter: 0)
         sign_in user
         visit posts_path
       end
@@ -32,7 +34,10 @@ RSpec.describe 'Post view', type: :feature do
     end
 
     describe 'On posts with comments' do
-      let(:post) { Post.create(title: 'Introduction to wild magic', text: 'My third post', user_id: user.id,commentscounter:0, likescounter:0) }
+      let(:post) do
+        Post.create(title: 'Introduction to wild magic', text: 'My third post', user_id: user.id, commentscounter: 0,
+                    likescounter: 0)
+      end
       before do
         Comment.create(text: 'two', user_id: user.id, post_id: post.id)
         Comment.create(text: 'three', user_id: user.id, post_id: post.id)
@@ -59,7 +64,7 @@ RSpec.describe 'Post view', type: :feature do
       end
 
       it "should redirected to that user's show page, when click on a user" do
-        find(:link_or_button, "#{user.name}").click
+        find(:link_or_button, user.name.to_s).click
         expect(current_path).to eq(post_path(post.id))
       end
     end

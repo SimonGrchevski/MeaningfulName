@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User view', type: :feature do
   include Devise::Test::IntegrationHelpers
   describe 'User index view' do
-    let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools',postcounter:3) }
+    let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools', postcounter: 3) }
 
     before do
       @user_one = User.create(name: 'Frodo', email: 'frody@example.com', password: 'runforest')
@@ -23,7 +23,7 @@ RSpec.describe 'User view', type: :feature do
     end
 
     it "should redirected to that user's show page, when click on a user" do
-      find(:link_or_button, "#{user.name}").click
+      find(:link_or_button, user.name.to_s).click
       expect(current_path).to eq(user_path(user.id))
     end
   end

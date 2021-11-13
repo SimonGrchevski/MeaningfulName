@@ -3,8 +3,8 @@ class PostsController < ApplicationController
     @user = current_user
     @posts = Post.all.includes([:user])
     User.all.each { |u| u.postcounter = u.posts.count }
-    @posts.each { |p| p.commentscounter = p.comments.count}
-      
+    @posts.each { |p| p.commentscounter = p.comments.count }
+
     @post = Post.new
   end
 
@@ -34,6 +34,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:text, :commentscounter, :likescounter,:title, :user_id)
+    params.require(:post).permit(:text, :commentscounter, :likescounter, :title, :user_id)
   end
 end

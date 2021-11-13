@@ -6,7 +6,8 @@ RSpec.describe 'User view', type: :feature do
     let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools') }
 
     before do
-      @user_one = User.create(name: 'Frodo', email: 'frody@example.com', password: 'runforest', bio:'Its me,Frodo',postcounter:3)
+      @user_one = User.create(name: 'Frodo', email: 'frody@example.com', password: 'runforest', bio: 'Its me,Frodo',
+                              postcounter: 3)
       @user_two = User.create(name: 'Sam', email: 'sam@example.com', password: 'Iobaymaster')
 
       sign_in user
@@ -30,7 +31,7 @@ RSpec.describe 'User view', type: :feature do
     end
 
     it "should redirects me to the user's post's index page, when click on a see all posts button" do
-      find_link("Show all posts").click
+      find_link('Show all posts').click
       expect(current_path).to eq(posts_path)
     end
   end

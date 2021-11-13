@@ -3,12 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Post view', type: :feature do
   include Devise::Test::IntegrationHelpers
   describe 'Post show' do
-    let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools',postcounter:3) }
+    let(:user) { User.create(name: 'Gandalf', email: 'gandalf@example.com', password: 'Flyyoufools', postcounter: 3) }
     let(:user_two) { User.create(name: 'Frodo', email: 'frody@example.com', password: 'runforest') }
     let(:comment) { Comment.create(text: 'two', user_id: user.id, post_id: post.id) }
 
     describe 'display post information' do
-      let(:post) { Post.create(title: 'The great decieve', text: 'My first post', user_id: user.id,commentscounter:0, likescounter:0) }
+      let(:post) do
+        Post.create(title: 'The great decieve', text: 'My first post', user_id: user.id, commentscounter: 0,
+                    likescounter: 0)
+      end
       before do
         Comment.create(text: 'Its gandy here', user_id: user.id, post_id: post.id)
         Comment.create(text: 'Its frody', user_id: user_two.id, post_id: post.id)

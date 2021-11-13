@@ -2,8 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-   
-    user ||= User.new 
+    user ||= User.new
     if user.role.eql? 'Admin'
       can :manage, :all
     else
