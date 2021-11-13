@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :users, except:[:destroy]
   devise_for :users, :controllers => {:passwords => 'passwords'}
   devise_scope :user do
     authenticated :user do
-      root 'users#show', as: :authenticated_root
+      root 'users#index', as: :authenticated_root
       resources :posts
       resources :comments
       resources :likes
